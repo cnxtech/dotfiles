@@ -1,2 +1,2 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export PATH="/opt/anaconda2/bin:$PATH"
+export PATH="/Users/kai/anaconda/bin:$PATH"
