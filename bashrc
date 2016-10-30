@@ -1,3 +1,11 @@
+platform='unknown'
+unamestr=`uname`
+if [[ "$unamestr" == 'Linux' ]]; then
+    platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+    platform='osx'
+fi
+
 function exitstatus {
 
     EXITSTATUS="$?"
@@ -21,4 +29,9 @@ function exitstatus {
 
 PROMPT_COMMAND=exitstatus
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-export PATH="/Users/kai/anaconda/bin:$PATH"
+
+if [[ $platform == 'linux' ]]; then
+    export PATH="/home/kai/anaconda2/bin:$PATH"
+elif [[ $platform == 'osx' ]]; then
+    export PATH="/Users/kai/anaconda/bin:$PATH"
+fi
