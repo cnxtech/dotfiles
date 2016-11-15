@@ -35,3 +35,6 @@ PROMPT_COMMAND=exitstatus
 if [[ $platform == 'osx' ]]; then
     export PATH="/Users/kai/anaconda/bin:$PATH"
 fi
+
+# VI mode
+set -o vi
