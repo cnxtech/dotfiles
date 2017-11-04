@@ -30,10 +30,10 @@ function exitstatus {
 PROMPT_COMMAND=exitstatus
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-#if [[ $platform == 'linux' ]]; then
-#    export PATH="/home/kai/anaconda2/bin:$PATH"
-if [[ $platform == 'osx' ]]; then
-    export PATH="/Users/kai/anaconda/bin:$PATH"
+if [[ $platform == 'linux' ]]; then
+    export PATH="/home/kai/anaconda3/bin:$PATH"
+elif [[ $platform == 'osx' ]]; then
+    export PATH="/Users/kai/anaconda3/bin:$PATH"
 fi
 
 # VI mode
