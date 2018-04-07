@@ -36,5 +36,6 @@ elif [[ $platform == 'osx' ]]; then
     export PATH="/Users/kai/anaconda3/bin:$PATH"
 fi
 
+export PATH=$PATH:~/ldeo-toolkit/bin:~/.local/bin/
 # VI mode
 set -o vi
