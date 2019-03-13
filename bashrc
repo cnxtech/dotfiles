@@ -14,8 +14,7 @@ function exitstatus {
     GREEN="\[\e[32;1m\]"
     BLUE="\[\e[34;1m\]"
     OFF="\[\033[m\]"
-
-    PROMPT="[\u@\h \w\n\[$(tput sgr0)\]"
+    PROMPT="[($CONDA_DEFAULT_ENV) \u@\h \w\n\[$(tput sgr0)\]"
 
     if [ "${EXITSTATUS}" -eq 0 ]
     then
@@ -25,6 +24,7 @@ function exitstatus {
     fi
 
     PS2="${BOLD}>${OFF} "
+
 }
 
 PROMPT_COMMAND=exitstatus
@@ -32,3 +32,19 @@ PROMPT_COMMAND=exitstatus
 
 # VI mode
 set -o vi
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/kypak/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/kypak/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kypak/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/kypak/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
